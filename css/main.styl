@@ -1,0 +1,133 @@
+@import 'nib'
+@import 'normalize'
+
+medium = "only screen and (min-width: 30em)"
+large = "only screen and (min-width: 50em)"
+
+html
+  margin 0
+  padding 0
+
+  background-color #3A2F73
+
+  color #fff
+  font normal 100%/1.5 Georgia,serif
+
+  @media medium
+    font-size 105%
+
+  @media large
+    font-size 110%
+
+body
+  margin 0
+  padding 0
+
+@import 'grid-builder'
+
+grid-units("s", 3)
+
+@media medium
+  grid-units("m", 4, true)
+
+@media large
+  grid-units("l", 6, true)
+
+.grid
+  margin 0 auto
+  max-width 60em
+
+@import 'aleo'
+@import 'typografier'
+
+.img-flex
+  display block
+  width 100%
+
+a
+a:link
+a:visited
+  border-bottom 0.1em solid rgba(255,255,255,0.5)
+
+  color #fff
+  text-decoration none
+
+.masthead
+  background #3a2f73 url("../img/17kp-texture.jpg") no-repeat center center
+  background-size cover
+
+.logo
+  margin 0 auto
+  padding 0
+  max-width 320px
+
+.blurb
+  margin 1.5rem auto 0
+  max-width 30em
+
+  text-align center
+
+  @media large
+    margin-top 0
+
+    text-align left
+
+.book__cover-wrapper
+  overflow hidden
+
+.book__cover
+.book__cover:link
+.book__cover:visited
+  display block
+  position relative
+
+  animation slide-book 0.5s ease-out
+  border 0
+
+.book__cover:after
+  bottom 0
+  position absolute
+
+.book__front
+  margin-left 10%
+  width 90%
+  transform perspective(500) rotateY(15deg)
+  transform-style preserve-3d
+  transform-origin left center
+  transition all 100ms linear
+
+.book__spine
+  left 0
+  height 100%
+  width 10%
+  position absolute
+  top 0
+  transform perspective(500) rotateY(-45deg)
+  transform-style preserve-3d
+  transform-origin right center
+  transition all 100ms linear
+
+.book__cover:hover
+
+  .book__front
+    transform perspective(400) rotateY(5deg)
+
+  .book__spine
+    transform perspective(400) rotateY(-55deg)
+
+@keyframes slide-book
+  0%
+    transform translateY(20%)
+  100%
+    transform translateY(0)
+
+#mariska-arisia
+  background #fff url("../img/mariska-texture.jpg") no-repeat center center
+  background-size cover
+  border-bottom 1px solid #312b27
+  border-top 1px solid #312b27
+
+  .book__title
+    border-bottom 3px solid #ffdf56
+    font-family: aleoregular,sans-serif
+    font-weight normal
