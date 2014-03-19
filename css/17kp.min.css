@@ -156,14 +156,16 @@ ul{padding:0;list-style-type:none}
 ul li{position:relative}
 ul li:before{content:"•";left:-.45em;position:absolute;opacity:.5;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter:alpha(opacity=50)}
 [title="and"]{font-family:Baskerville,Palatino,"Book Antiqua",serif;font-style:italic}
-.btn,.btn:link,.btn:visited{padding:.5em .75em .65em;border:2px solid #3a2f73;-webkit-border-radius:4px;border-radius:4px}
+.btn,.btn:link,.btn:visited{display:inline-block;padding:.5em .75em .65em;border:2px solid #3a2f73;-webkit-border-radius:4px;border-radius:4px}
 .btn:hover,.btn:focus,.btn:active{background-color:#efefef;border-color:#000;color:#000}
+.btn-subtle,.btn-subtle:link,.btn-subtle:visited{padding:.25em .5em .4em;border:0}
 .masthead{background-color:#3a2f73}
 .logo{display:block;margin:0 auto;max-width:250px;background-color:#3a2f73;}
 @media only screen and (min-width: 32em){.logo{margin-left:0;margin-right:0}
 }.logo__link,.logo__link:link,.logo__link:visited{border:0}
 .nav{margin:0 0 1.5rem;text-align:center;}
 @media only screen and (min-width: 32em){.nav{margin:1.5rem 0;text-align:left}
+}@media only screen and (min-width: 32em){.nav li:first-child{padding-left:0}
 }.nav a,.nav a:link,.nav a:visited{color:#fff;border-bottom-color:#3a2f73}
 .nav .current,.nav .current:link,.nav .current:visited{border-bottom-color:rgba(239,239,239,0.8)}
 .nav a:hover,.nav a:focus,.nav a:active,.nav .current:hover,.nav .current:focus,.nav .current:active{border-bottom-color:#fff;color:#fff}
@@ -188,7 +190,8 @@ ul li:before{content:"•";left:-.45em;position:absolute;opacity:.5;-ms-filter:"
 .book-group__cover:hover .book-group__spine{-webkit-transform:perspective(400) rotateY(-55deg);-moz-transform:perspective(400) rotateY(-55deg);-o-transform:perspective(400) rotateY(-55deg);-ms-transform:perspective(400) rotateY(-55deg);transform:perspective(400) rotateY(-55deg)}
 .book-group__title,.book-group__title:link,.book-group__title:visited{display:block;border:0;color:#000}
 .book-group__title:hover,.book-group__title:focus,.book-group__title:active{border:0;color:#3a2f73}
-.book-group__author__by{color:#999;font-family:Baskerville,Palatino,"Book Antiqua",Georgia,serif;font-style:italic}
+.book__author__by,.book-group__author__by{color:#999;font-family:Baskerville,Palatino,"Book Antiqua",Georgia,serif;font-style:italic}
+.book__title{font-weight:normal}
 @-moz-keyframes slide-book{0%{-webkit-transform:translateY(20%);-moz-transform:translateY(20%);-o-transform:translateY(20%);-ms-transform:translateY(20%);transform:translateY(20%)}
 100%{-webkit-transform:translateY(0);-moz-transform:translateY(0);-o-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}
 }@-webkit-keyframes slide-book{0%{-webkit-transform:translateY(20%);-moz-transform:translateY(20%);-o-transform:translateY(20%);-ms-transform:translateY(20%);transform:translateY(20%)}
@@ -210,3 +213,5 @@ ul li:before{content:"•";left:-.45em;position:absolute;opacity:.5;-ms-filter:"
 .i--facebook{background-image:url("../img/i-facebook.svg")}
 .i--twitter{background-image:url("../img/i-twitter.svg")}
 .i--googleplus{background-image:url("../img/i-googleplus.svg")}
+.i--amazon{background-image:url("../img/i-amazon.svg")}
+.i--indigo{background-image:url("../img/i-indigo.svg")}
