@@ -34,8 +34,11 @@ module.exports = (grunt) ->
           urlfunc: 'embedurl'
         files:
           'css/17kp.min.css': [
-            'css/normalize.styl'
-            'css/general.styl'
+            'css/normalize.css'
+            'css/setup.styl'
+            'css/typographier.styl'
+            'css/grid.styl'
+            'css/list-group.styl'
             'css/*.styl'
             '!css/common.styl'
           ]

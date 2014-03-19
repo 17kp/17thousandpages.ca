@@ -1,13 +1,3 @@
-@import 'nib'
-@import 'normalize'
-
-medium = "only screen and (min-width: 32em)"
-large = "only screen and (min-width: 50em)"
-
-brand-primary = #3a2f73
-brand-light-grey = #efefef
-brand-medium-grey = #ddd
-
 html
   margin 0
   padding 0
@@ -32,24 +22,6 @@ html
 body
   margin 0
   padding 0
-
-@import 'grid-builder'
-
-grid-units("s", 3)
-
-@media medium
-  grid-units("m", 4, true)
-
-@media large
-  grid-units("l", 6, true)
-
-.grid
-  margin 0 auto
-  max-width 60em
-
-@import 'typografier'
-@import 'list-group'
-@import 'icons'
 
 .brand-color
   color brand-primary
