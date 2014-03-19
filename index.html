@@ -1,25 +1,29 @@
 ---
 layout: default
 title_after: "—Stories brimming with wonder; Ottawa, Canada"
+meta: "Science fiction and space opera stories big on imagination &amp; adventure—and brimming with wonder."
+show_blurb: true
 ---
 
-<div class="books pad-t pad-b">
+<div class="book-group pad-t pad-b">
   <ol class="grid grid--bottom island">
-    <li class="unit unit-s-1 unit-m-1-2 unit-l-1-4">
-      <div class="book">
-        <div class="book__cover-wrapper push">
-          <a class="book__cover" href="https://www.goodreads.com/book/show/20705768-the-accidental-adventures-of-mariska-arisia" rel="external">
-            <img class="book__front img-flex" src="img/mariska-arisia.jpg" alt="">
-            <img class="book__spine" src="img/mariska-arisia-spine.jpg" alt="">
-          </a>
+    {% for book in site.data.books %}
+      <li class="unit unit-s-1 unit-m-1-2 unit-l-1-4">
+        <div class="book-group__item">
+          <div class="book-group__cover-wrapper push">
+            <a class="book-group__cover" href="{{site.baseurl}}/books/{{book.url}}" rel="external">
+              <img class="book-group__front img-flex" src="img/{{book.cover}}" alt="">
+              <img class="book-group__spine" src="img/{{book.spine}}" alt="">
+            </a>
+          </div>
+          <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title}}</a>
+          <p class="book-group__author">
+            <span class="book-group__author__by milli">By</span>
+            <span class="book-group__author__name milli">{{book.author}}</span>
+          </p>
+          <a class="btn micro" href="{{site.baseurl}}/books/{{book.url}}">{{book.btn}}</a>
         </div>
-        <a class="book__title mega" href="#">The Accidental Adventures of Mariska Arisia</a>
-        <p class="book__author">
-          <span class="book__author__by milli">By</span>
-          <span class="book__author__name milli">Thomas J Bradley</span>
-        </p>
-        <a class="btn micro" href="#">More Details</a>
-      </div>
-    </li>
+      </li>
+    {% endfor %}
   </ol>
 </div>

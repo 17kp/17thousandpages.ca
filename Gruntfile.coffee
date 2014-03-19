@@ -36,11 +36,13 @@ module.exports = (grunt) ->
           'css/17kp.min.css': [
             'css/normalize.css'
             'css/setup.styl'
-            'css/typographier.styl'
             'css/grid.styl'
+            'css/typografier.styl'
             'css/list-group.styl'
+            'css/main.styl'
             'css/*.styl'
             '!css/common.styl'
+            '!css/grid-builder.styl'
           ]
 
     coffee:

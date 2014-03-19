@@ -1,0 +1,69 @@
+.book-group__cover-wrapper
+  overflow hidden
+
+.book-group__cover
+.book-group__cover:link
+.book-group__cover:visited
+  display block
+  position relative
+
+  animation slide-book 0.5s ease-out
+  border 0
+
+.book-group__cover:after
+  bottom 0
+  position absolute
+
+.book-group__front
+  margin-left 10%
+  width 90%
+  transform perspective(500) rotateY(15deg)
+  transform-style preserve-3d
+  transform-origin left center
+  transition all 100ms linear
+
+.book-group__spine
+  left 0
+  height 100%
+  width 10%
+  position absolute
+  top 0
+  transform perspective(500) rotateY(-45deg)
+  transform-style preserve-3d
+  transform-origin right center
+  transition all 100ms linear
+
+.book-group__cover:hover
+
+  .book-group__front
+    transform perspective(400) rotateY(5deg)
+
+  .book-group__spine
+    transform perspective(400) rotateY(-55deg)
+
+@keyframes slide-book
+  0%
+    transform translateY(20%)
+  100%
+    transform translateY(0)
+
+.book-group__title
+.book-group__title:link
+.book-group__title:visited
+  display block
+
+  border 0
+
+  color #000
+
+.book-group__title:hover
+.book-group__title:focus
+.book-group__title:active
+  border 0
+
+  color brand-primary
+
+.book-group__author__by
+  color #999
+  font-family Baskerville,Palatino,"Book Antiqua",Georgia,serif
+  font-style italic
