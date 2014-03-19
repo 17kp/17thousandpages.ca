@@ -1,23 +1,33 @@
 @import 'nib'
 @import 'normalize'
 
-medium = "only screen and (min-width: 30em)"
+medium = "only screen and (min-width: 32em)"
 large = "only screen and (min-width: 50em)"
+
+brand-primary = #3a2f73
+brand-light-grey = #efefef
+brand-medium-grey = #ddd
 
 html
   margin 0
   padding 0
 
-  background-color #3A2F73
+  background-color #fff
 
-  color #fff
-  font normal 100%/1.5 Georgia,serif
+  color #444
+  font normal 100%/1.5 "Source Sans Pro",sans-serif
 
   @media medium
     font-size 105%
 
   @media large
     font-size 110%
+
+  @media only screen and (min-width: 80em)
+    font-size 120%
+
+  @media only screen and (min-width: 100em)
+    font-size 130%
 
 body
   margin 0
@@ -37,8 +47,12 @@ grid-units("s", 3)
   margin 0 auto
   max-width 60em
 
-@import 'aleo'
 @import 'typografier'
+@import 'list-group'
+@import 'icons'
+
+.brand-color
+  color brand-primary
 
 .img-flex
   display block
@@ -47,30 +61,121 @@ grid-units("s", 3)
 a
 a:link
 a:visited
-  border-bottom 0.1em solid rgba(255,255,255,0.5)
+  border-bottom 0.1em solid rgba(brand-primary,0.5)
+  transition all 150ms linear
 
-  color #fff
+  color brand-primary
   text-decoration none
 
+a:hover
+a:focus
+a:active
+  border-color #000
+
+  color #000
+
+ul
+  padding 0
+
+  list-style-type none
+
+ul li
+  position relative
+
+ul li:before
+  content "•"
+  left -0.45em
+  position absolute
+
+  opacity 0.5
+
+[title="and"]
+  font-family Baskerville,Palatino,"Book Antiqua",serif
+  font-style italic
+
+.btn
+.btn:link
+.btn:visited
+  padding 0.5em 0.75em 0.65em
+
+  border 2px solid brand-primary
+  border-radius 4px
+
+.btn:hover
+.btn:focus
+.btn:active
+  background-color brand-light-grey
+  border-color #000
+
+  color #000
+
 .masthead
-  background #3a2f73 url("../img/17kp-texture.jpg") no-repeat center center
-  background-size cover
+  background-color brand-primary
 
 .logo
+  display block
   margin 0 auto
-  padding 0
-  max-width 320px
+  max-width 250px
 
-.blurb
-  margin 1.5rem auto 0
-  max-width 30em
+  background-color brand-primary
+
+  @media medium
+    margin-left 0
+    margin-right 0
+
+.logo__link
+.logo__link:link
+.logo__link:visited
+  border 0
+
+.nav
+  margin 0 0 1.5rem
 
   text-align center
 
-  @media large
-    margin-top 0
+  @media medium
+    margin 1.5rem 0
 
     text-align left
+
+.nav a
+.nav a:link
+.nav a:visited
+  color #fff
+
+  border-bottom-color brand-primary
+
+.nav .current
+.nav .current:link
+.nav .current:visited
+  border-bottom-color rgba(brand-light-grey, 0.8)
+
+.nav a:hover
+.nav a:focus
+.nav a:active
+.nav .current:hover
+.nav .current:focus
+.nav .current:active
+  border-bottom-color #fff
+
+  color #fff
+
+.nav__heading
+  display inline
+  margin 0
+  padding 0
+
+  font-size inherit
+  font-weight normal
+
+.band-light
+  background-color brand-light-grey
+
+.band-dark
+  background-color brand-medium-grey
+
+.blurb
+  font-style italic
 
 .book__cover-wrapper
   overflow hidden
@@ -121,13 +226,54 @@ a:visited
   100%
     transform translateY(0)
 
-#mariska-arisia
-  background #fff url("../img/mariska-texture.jpg") no-repeat center center
-  background-size cover
-  border-bottom 1px solid #312b27
-  border-top 1px solid #312b27
+.book__title
+.book__title:link
+.book__title:visited
+  display block
 
-  .book__title
-    border-bottom 3px solid #ffdf56
-    font-family: aleoregular,sans-serif
-    font-weight normal
+  border 0
+
+  color #000
+
+.book__title:hover
+.book__title:focus
+.book__title:active
+  border 0
+
+  color brand-primary
+
+.book__author__by
+  color #999
+  font-family Baskerville,Palatino,"Book Antiqua",Georgia,serif
+  font-style italic
+
+.footer
+  color #666
+
+.footer a
+.footer a:link
+.footer a:visited
+  border-color rgba(#333, 0.3)
+
+  color #333
+
+.footer a:hover
+.footer a:focus
+.footer a:active
+  border-color #000
+
+  color #000
+
+.copyright
+  text-align center
+
+  @media medium
+    text-align left
+
+.social-icons
+  height 24px
+
+  text-align center
+
+  @media medium
+    text-align right
