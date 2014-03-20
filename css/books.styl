@@ -69,10 +69,66 @@
   font-family Baskerville,Palatino,"Book Antiqua",Georgia,serif
   font-style italic
 
+.book
+  background transparent no-repeat left top
+  background-size 100% auto
+
 .book__title
   font-weight normal
 
-// .book__author
+.book__details
+  position relative
+
+  @media xlarge
+    position absolute
 
 .book__buy
   margin-left -0.4em
+
+.book__buttons
+  bottom -0.6rem
+  display none
+  left 25%
+  margin-left -5em
+  position absolute
+  width 10em
+
+  text-align center
+
+  > li
+    display inline-block
+
+  > li::before
+    content ""
+    display none
+
+  > li:first-child::after
+    content "•"
+    display inline-block
+    margin 0 0.2em 0 0.4em
+
+    color #888
+
+  @media xlarge
+    display block
+
+.book__button
+  background-color transparent
+  border 0
+  cursor pointer
+  padding 0
+  position relative
+
+  color #555
+
+.book__button:hover
+  color #000
+
+.book__button:focus
+  outline 2px solid #000
+
+.book__button:active
+  outline 0
+
+.book__button[data-state="selected"]
+  border-bottom 0.2em solid rgba(#555, 0.4)

@@ -39,6 +39,7 @@ module.exports = (grunt) ->
             'css/grid.styl'
             'css/typografier.styl'
             'css/list-group.styl'
+            'css/embed.styl'
             'css/main.styl'
             'css/*.styl'
             '!css/common.styl'
@@ -99,15 +100,15 @@ module.exports = (grunt) ->
           livereload: false
         files: ['css/*.styl']
         tasks: ['stylus']
-      # coffee:
-      #   options:
-      #     livereload: false
-      #   files: ['js/*.coffee']
-      #   tasks: ['coffee', 'concat:dev']
+      coffee:
+        options:
+          livereload: false
+        files: ['js/*.coffee']
+        tasks: ['coffee', 'concat:dev']
       css:
         files: ['_site/css/*.css']
-      # js:
-      #   files: ['_site/js/*.js']
+      js:
+        files: ['_site/js/*.js']
       html:
         files: ['_site/*.html']
 
@@ -117,8 +118,8 @@ module.exports = (grunt) ->
     'svgmin'
     'imageoptim'
     'stylus'
-    # 'coffee'
-    # 'uglify:prod'
+    'coffee'
+    'uglify:prod'
   ]
 
   grunt.registerTask 'default', [

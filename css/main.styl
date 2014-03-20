@@ -21,6 +21,7 @@ html
 
 body
   margin 0
+  overflow-x hidden
   padding 0
 
 .brand-color
@@ -54,7 +55,7 @@ ul
 ul li
   position relative
 
-ul li:before
+ul li::before
   content "•"
   left -0.45em
   position absolute
@@ -73,6 +74,8 @@ ul li:before
 
   border 2px solid brand-primary
   border-radius 4px
+
+  white-space nowrap
 
 .btn:hover
 .btn:focus
