@@ -1,0 +1,67 @@
+.carousel
+  position relative
+
+.carousel__item[data-state="current"]
+  z-index 1000
+
+.carousel__item[data-state="incoming-left"]
+  z-index 2000
+
+  animation carousel-slide-in-from-left 300ms ease-out 1
+
+.carousel__item[data-state="incoming-right"]
+  z-index 2000
+
+  animation carousel-slide-in-from-right 300ms ease-out 1
+
+@keyframes carousel-slide-in-from-right
+  0%
+    transform translateX(100%)
+  100%
+    transform translateX(0)
+
+@keyframes carousel-slide-in-from-left
+  0%
+    transform translateX(-100%)
+  100%
+    transform translateX(0)
+
+.carousel__buttons
+  height 100%
+  left 0
+  position absolute
+  top 0
+  width 100%
+  z-index 5000
+
+.carousel__button
+  left 0
+  height 100%
+  overflow hidden
+  position absolute
+  padding 0
+  top 0
+  bottom 0
+  width 50px
+
+  background transparent embedurl("../img/icons/arrow-left.svg") no-repeat center center
+  border 0
+  cursor pointer
+
+  text-indent 100%
+  white-space nowrap
+
+.carousel__button:hover
+  background-color rgba(0,0,0,0.2)
+
+.carousel__button:focus
+  outline 2px solid #000
+
+.carousel__button:active
+  outline 0
+
+.carousel__button--next
+  left auto
+  right 0
+
+  background-image embedurl("../img/icons/arrow-right.svg")
