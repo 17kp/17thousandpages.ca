@@ -52,6 +52,10 @@ grid-units(prefix, cols = 4, add-offsets = false)
   .unit-{prefix}-1
     grid-unit-1()
 
+  if add-offsets == true
+    .unit-offset-{prefix}--0
+      margin-left 0
+
   for size in 2 .. cols
     for sub-size in 1 .. size
       grid-unit-single(prefix, sub-size, size, previous-widths, unit-names, add-offsets)
