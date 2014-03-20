@@ -11,3 +11,4 @@ exclude:
   - 'launch'
   - '*.styl'
   - '*.coffee'
+  - '*.coffee.js'
