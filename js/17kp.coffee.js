@@ -25,7 +25,6 @@
       originalCoord.y = e.targetTouches[0].pageY;
       finalCoord.x = originalCoord.x;
       finalCoord.y = originalCoord.y;
-      console.log(finalCoord);
       goingVertical = 0;
       return clearTimeout(callbackTimeout);
     };
@@ -144,7 +143,6 @@
   addSwipeEvent = function(elem) {
     var swiper;
     return swiper = new Swiper(elem, function(e) {
-      console.log(e.direction);
       if (e.direction === 'left') {
         return next();
       } else {

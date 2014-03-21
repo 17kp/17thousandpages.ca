@@ -14,8 +14,6 @@ this.Swiper = (elem, callback) ->
     finalCoord.x = originalCoord.x
     finalCoord.y = originalCoord.y
 
-    console.log(finalCoord)
-
     goingVertical = 0
     clearTimeout(callbackTimeout)
 

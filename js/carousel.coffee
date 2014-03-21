@@ -21,7 +21,6 @@ addAnimationEndEvent = (elem) ->
 
 addSwipeEvent = (elem) ->
   swiper = new Swiper elem, (e) ->
-    console.log(e.direction)
     if e.direction is 'left'
       next()
     else
