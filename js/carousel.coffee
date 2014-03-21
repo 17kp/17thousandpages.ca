@@ -1,4 +1,5 @@
 carouselItems = document.querySelectorAll('.carousel__item')
+carouselButtons = document.querySelector('.carousel__buttons')
 nextBtn = document.getElementById('carousel__next')
 prevBtn = document.getElementById('carousel__prev')
 outgoing = 0
@@ -18,12 +19,22 @@ addAnimationEndEvent = (elem) ->
   for animEvent in animationEndEvents
     elem.addEventListener(animEvent, resetCurrent, false)
 
+addSwipeEvent = (elem) ->
+  swiper = new Swiper elem, (e) ->
+    console.log(e.direction)
+    if e.direction is 'left'
+      next()
+    else
+      prev()
+
 addClickEvent = (elem, callback) ->
   for clickEvent in clickEvents
     elem.addEventListener(clickEvent, callback, false)
 
 next = (e) ->
-  e.preventDefault()
+  if e
+    e.preventDefault()
+
   outgoing = incoming
   incoming++
 
@@ -33,7 +44,9 @@ next = (e) ->
   switchSlide('left')
 
 prev = (e) ->
-  e.preventDefault()
+  if e
+    e.preventDefault()
+
   outgoing = incoming
   incoming--
 
@@ -45,6 +58,8 @@ prev = (e) ->
 if carouselItems && nextBtn && prevBtn
   for item in carouselItems
     addAnimationEndEvent(item)
+
+  addSwipeEvent(carouselButtons)
 
   addClickEvent(nextBtn, next)
   addClickEvent(prevBtn, prev)

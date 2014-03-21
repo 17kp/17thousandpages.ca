@@ -50,6 +50,7 @@ module.exports = (grunt) ->
       compile:
         files:
           'js/17kp.coffee.js': [
+            'js/swiper.coffee'
             'js/*.coffee'
           ]
 
@@ -61,7 +62,6 @@ module.exports = (grunt) ->
           preserveComments: 'some'
         files:
           'js/17kp.min.js': [
-            'js/$.min.js'
             'js/17kp.coffee.js'
           ]
 
@@ -69,7 +69,6 @@ module.exports = (grunt) ->
       dev:
         files:
           'js/17kp.min.js': [
-            'js/$.min.js'
             'js/17kp.coffee.js'
           ]
 
