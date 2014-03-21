@@ -4,27 +4,27 @@
 .carousel__item[data-state="current"]
   z-index 1000
 
-.carousel__item[data-state="incoming-left"]
+.carousel__item[data-state="outgoing-to-left"]
   z-index 2000
 
-  animation carousel-slide-in-from-left 300ms ease-out 1
+  animation carousel-slide-out-to-left 300ms ease-in 1
 
-.carousel__item[data-state="incoming-right"]
+.carousel__item[data-state="outgoing-to-right"]
   z-index 2000
 
-  animation carousel-slide-in-from-right 300ms ease-out 1
+  animation carousel-slide-out-to-right 300ms ease-in 1
 
-@keyframes carousel-slide-in-from-right
+@keyframes carousel-slide-out-to-left
   0%
-    transform translateX(100%)
-  100%
     transform translateX(0)
-
-@keyframes carousel-slide-in-from-left
-  0%
+  100%
     transform translateX(-100%)
+
+@keyframes carousel-slide-out-to-right
+  0%
+    transform translateX(0%)
   100%
-    transform translateX(0)
+    transform translateX(100%)
 
 .carousel__buttons
   height 100%

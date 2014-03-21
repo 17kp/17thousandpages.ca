@@ -23,7 +23,7 @@
 }).call(this);
 
 (function() {
-  var addAnimationEndEvent, animationEndEvents, carouselItems, incoming, item, next, nextBtn, outgoing, prev, prevBtn, resetCurrent, switchSlide, _i, _len;
+  var addAnimationEndEvent, addClickEvent, animationEndEvents, carouselItems, clickEvents, incoming, item, next, nextBtn, outgoing, prev, prevBtn, resetCurrent, switchSlide, _i, _len;
 
   carouselItems = document.querySelectorAll('.carousel__item');
 
@@ -37,13 +37,15 @@
 
   animationEndEvents = ['animationend', 'webkitAnimationEnd', 'oanimationend', 'MSAnimationEnd'];
 
+  clickEvents = ['click', 'touchend'];
+
   resetCurrent = function(e) {
-    carouselItems[outgoing].setAttribute('data-state', '');
-    return carouselItems[incoming].setAttribute('data-state', 'current');
+    return carouselItems[outgoing].setAttribute('data-state', '');
   };
 
-  switchSlide = function(item, direction) {
-    return carouselItems[item].setAttribute('data-state', "incoming-" + direction);
+  switchSlide = function(direction) {
+    carouselItems[incoming].setAttribute('data-state', 'current');
+    return carouselItems[outgoing].setAttribute('data-state', "outgoing-to-" + direction);
   };
 
   addAnimationEndEvent = function(elem) {
@@ -56,13 +58,23 @@
     return _results;
   };
 
+  addClickEvent = function(elem, callback) {
+    var clickEvent, _i, _len, _results;
+    _results = [];
+    for (_i = 0, _len = clickEvents.length; _i < _len; _i++) {
+      clickEvent = clickEvents[_i];
+      _results.push(elem.addEventListener(clickEvent, callback, false));
+    }
+    return _results;
+  };
+
   next = function(e) {
     outgoing = incoming;
     incoming++;
     if (incoming > carouselItems.length - 1) {
       incoming = 0;
     }
-    return switchSlide(incoming, 'right');
+    return switchSlide('left');
   };
 
   prev = function(e) {
@@ -71,7 +83,7 @@
     if (incoming < 0) {
       incoming = carouselItems.length - 1;
     }
-    return switchSlide(incoming, 'left');
+    return switchSlide('right');
   };
 
   if (carouselItems && nextBtn && prevBtn) {
@@ -79,8 +91,8 @@
       item = carouselItems[_i];
       addAnimationEndEvent(item);
     }
-    nextBtn.addEventListener('click', next, false);
-    prevBtn.addEventListener('click', prev, false);
+    addClickEvent(nextBtn, next);
+    addClickEvent(prevBtn, prev);
   }
 
 }).call(this);

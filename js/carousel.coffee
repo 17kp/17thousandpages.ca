@@ -5,17 +5,22 @@ outgoing = 0
 incoming = 0
 
 animationEndEvents = ['animationend', 'webkitAnimationEnd', 'oanimationend', 'MSAnimationEnd']
+clickEvents = ['click', 'touchend']
 
 resetCurrent = (e) ->
   carouselItems[outgoing].setAttribute('data-state', '')
-  carouselItems[incoming].setAttribute('data-state', 'current')
 
-switchSlide = (item, direction) ->
-  carouselItems[item].setAttribute('data-state', "incoming-#{ direction }")
+switchSlide = (direction) ->
+  carouselItems[incoming].setAttribute('data-state', 'current')
+  carouselItems[outgoing].setAttribute('data-state', "outgoing-to-#{ direction }")
 
 addAnimationEndEvent = (elem) ->
   for animEvent in animationEndEvents
     elem.addEventListener(animEvent, resetCurrent, false)
+
+addClickEvent = (elem, callback) ->
+  for clickEvent in clickEvents
+    elem.addEventListener(clickEvent, callback, false)
 
 next = (e) ->
   outgoing = incoming
@@ -24,7 +29,7 @@ next = (e) ->
   if incoming > carouselItems.length - 1
     incoming = 0
 
-  switchSlide(incoming, 'right')
+  switchSlide('left')
 
 prev = (e) ->
   outgoing = incoming
@@ -33,11 +38,11 @@ prev = (e) ->
   if incoming < 0
     incoming = carouselItems.length - 1
 
-  switchSlide(incoming, 'left')
+  switchSlide('right')
 
 if carouselItems && nextBtn && prevBtn
   for item in carouselItems
     addAnimationEndEvent(item)
 
-  nextBtn.addEventListener('click', next, false)
-  prevBtn.addEventListener('click', prev, false)
+  addClickEvent(nextBtn, next)
+  addClickEvent(prevBtn, prev)
