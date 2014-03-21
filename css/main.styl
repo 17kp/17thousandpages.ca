@@ -150,7 +150,23 @@ hr
 .nav .current
 .nav .current:link
 .nav .current:visited
-  border-bottom-color rgba(brand-light-grey, 0.8)
+  position relative
+
+  border 0
+
+.nav .current::after
+  bottom -6px
+  content "▾"
+  left 0
+  position absolute
+  width 100%
+
+  border-top 2px solid brand-light-grey
+  transition all 150ms linear
+  opacity 0.7
+
+  line-height 4px
+  text-align center
 
 .nav a:hover
 .nav a:focus
@@ -158,9 +174,12 @@ hr
 .nav .current:hover
 .nav .current:focus
 .nav .current:active
-  border-bottom-color #fff
-
   color #fff
+
+.nav .current:hover::after
+.nav .current:focus::after
+.nav .current:active::after
+  opacity 1
 
 .nav__heading
   display inline
