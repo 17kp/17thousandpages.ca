@@ -23,6 +23,7 @@ addClickEvent = (elem, callback) ->
     elem.addEventListener(clickEvent, callback, false)
 
 next = (e) ->
+  e.preventDefault()
   outgoing = incoming
   incoming++
 
@@ -32,6 +33,7 @@ next = (e) ->
   switchSlide('left')
 
 prev = (e) ->
+  e.preventDefault()
   outgoing = incoming
   incoming--
 

@@ -69,6 +69,7 @@
   };
 
   next = function(e) {
+    e.preventDefault();
     outgoing = incoming;
     incoming++;
     if (incoming > carouselItems.length - 1) {
@@ -78,6 +79,7 @@
   };
 
   prev = function(e) {
+    e.preventDefault();
     outgoing = incoming;
     incoming--;
     if (incoming < 0) {
