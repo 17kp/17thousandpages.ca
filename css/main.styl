@@ -228,3 +228,23 @@ hr
 
   @media medium
     text-align right
+
+#about
+  position relative
+
+#about:target::before
+  content "▶︎"
+  left -1.3em
+  position absolute
+  width 1em
+
+  animation about-fade-in 1s linear
+
+  color brand-primary
+  text-align right
+
+@keyframes about-fade-in
+  0%
+    opacity 0
+  100%
+    opacity 1

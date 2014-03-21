@@ -226,6 +226,18 @@ hr{margin:0 auto 1.5rem;max-width:54em;width:90%;border:0;border-top:1px solid #
 @media only screen and (min-width: 32em){.copyright{text-align:left}
 }.social-icons{height:24px;text-align:center;}
 @media only screen and (min-width: 32em){.social-icons{text-align:right}
+}#about{position:relative}
+#about:target::before{content:"▶︎";left:-1.3em;position:absolute;width:1em;-webkit-animation:about-fade-in 1s linear;-moz-animation:about-fade-in 1s linear;-o-animation:about-fade-in 1s linear;-ms-animation:about-fade-in 1s linear;animation:about-fade-in 1s linear;color:#3a2f73;text-align:right}
+@-moz-keyframes about-fade-in{0%{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@-webkit-keyframes about-fade-in{0%{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@-o-keyframes about-fade-in{0%{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@-ms-keyframes about-fade-in{0%{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+100%{opacity:1;-ms-filter:none;filter:none}
+}@keyframes about-fade-in{0%{opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}
+100%{opacity:1;-ms-filter:none;filter:none}
 }
 #mariska-arisia[data-state="front"],#mariska-arisia[data-state="back"]{background-image:url("../img/books/mariska-arisia/front-back.jpg");}
 @media only screen and (min-width: 62em){#mariska-arisia[data-state="front"],#mariska-arisia[data-state="back"]{background-image:url("../img/books/mariska-arisia/front.jpg")}
