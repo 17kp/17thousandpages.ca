@@ -213,7 +213,7 @@ hr{margin:0 auto 1.5rem;max-width:54em;width:90%;border:0;border-top:1px solid #
 }.nav a,.nav a:link,.nav a:visited{color:#fff;border-bottom-color:#3a2f73}
 .nav .current,.nav .current:link,.nav .current:visited{position:relative;border:0}
 .nav .current::after{bottom:-6px;content:"▾";left:0;position:absolute;width:100%;border-top:2px solid #efefef;-webkit-transition:all 150ms linear;-moz-transition:all 150ms linear;-o-transition:all 150ms linear;-ms-transition:all 150ms linear;transition:all 150ms linear;opacity:.7;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";filter:alpha(opacity=70);line-height:4px;text-align:center}
-.nav a:hover,.nav a:focus,.nav a:active,.nav .current:hover,.nav .current:focus,.nav .current:active{color:#fff}
+.nav a:hover,.nav a:focus,.nav a:active,.nav .current:hover,.nav .current:focus,.nav .current:active{border-bottom-color:#fff;color:#fff}
 .nav .current:hover::after,.nav .current:focus::after,.nav .current:active::after{opacity:1;-ms-filter:none;filter:none}
 .nav__heading{display:inline;margin:0;padding:0;font-size:inherit;font-weight:normal}
 .band-light{background-color:#efefef}
