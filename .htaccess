@@ -429,7 +429,7 @@ AddDefaultCharset utf-8
 # http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx
 # https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
 
-# <IfModule mod_headers.c>
+<IfModule mod_headers.c>
 #     #                           (1)    (2)
     Header set X-XSS-Protection "1; mode=block"
     <FilesMatch "\.(appcache|atom|crx|css|cur|eot|f4[abpv]|flv|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|tt[cf]|vcf|vtt|webapp|web[mp]|woff|xml|xpi)$">
