@@ -132,9 +132,12 @@ module.exports = (grunt) ->
 
   require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask 'build', [
+  grunt.registerTask 'compress', [
     'svgmin'
     'imageoptim'
+  ]
+
+  grunt.registerTask 'build', [
     'stylus'
     'coffee'
     'uglify:prod'
