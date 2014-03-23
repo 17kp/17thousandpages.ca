@@ -26,4 +26,3 @@ Location: Ottawa, Canada
 ## Hosting
 
 - WiredTree <http://www.wiredtree.com/>
-- CloudFlare <https://www.cloudflare.com/>
