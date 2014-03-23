@@ -72,6 +72,25 @@ module.exports = (grunt) ->
             'js/17kp.coffee.js'
           ]
 
+    shell:
+      prod:
+        command: 'jekyll build'
+
+    htmlmin:
+      prod:
+        options:
+          removeComments: true
+          collapseWhitespace: true
+          collapseBooleanAttributes: true
+          removeRedundantAttributes: true
+          removeEmptyAttributes: true
+        files: [{
+          expand: true
+          cwd: '_site'
+          src: '**/*.html'
+          dest: '_site/'
+        }]
+
     parallel:
       dev:
         options:
@@ -119,6 +138,8 @@ module.exports = (grunt) ->
     'stylus'
     'coffee'
     'uglify:prod'
+    'shell:prod'
+    'htmlmin:prod'
   ]
 
   grunt.registerTask 'default', [
