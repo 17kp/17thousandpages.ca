@@ -445,10 +445,10 @@ AddDefaultCharset utf-8
 # E.g.: prevent `https://www.example.com` when your certificate only allows
 # `https://secure.example.com`.
 
-# <IfModule mod_rewrite.c>
-#    RewriteCond %{SERVER_PORT} !^443
-#    RewriteRule ^ https://example-domain-please-change-me.com%{REQUEST_URI} [R=301,L]
-# </IfModule>
+<IfModule mod_rewrite.c>
+   RewriteCond %{SERVER_PORT} !^443
+   RewriteRule ^ https://17thousandpages.ca%{REQUEST_URI} [R=301,L]
+</IfModule>
 
 # ------------------------------------------------------------------------------
 # | HTTP Strict Transport Security (HSTS)                                      |
@@ -470,9 +470,9 @@ AddDefaultCharset utf-8
 # IMPORTANT: Remove the `includeSubDomains` optional directive if the subdomains
 # are not using HTTPS.
 
-# <IfModule mod_headers.c>
-#    Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
-# </IfModule>
+<IfModule mod_headers.c>
+   Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
+</IfModule>
 
 # ------------------------------------------------------------------------------
 # | Server software information                                                |

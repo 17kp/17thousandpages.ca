@@ -1,6 +1,6 @@
 # robotstxt.org
 
-Sitemap: http://17thousandpages.ca/sitemap.xml
+Sitemap: https://17thousandpages.ca/sitemap.xml
 
 User-Agent: *
 Disallow:
