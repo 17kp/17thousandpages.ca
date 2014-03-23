@@ -3,3 +3,4 @@
 Sitemap: http://17thousandpages.ca/sitemap.xml
 
 User-Agent: *
+Disallow:

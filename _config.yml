@@ -2,13 +2,12 @@ markdown: redcarpet
 baseurl: ""
 permalink: pretty
 exclude:
-  - 'CNAME'
+  - 'deploy.sh'
+  - 'rsync-exclude.txt'
   - 'npmupdatedev'
   - 'package.json'
   - 'README.md'
   - 'node_modules'
-  - 'aws-s3.policy'
-  - 'launch'
   - '*.styl'
   - '*.coffee'
   - '*.coffee.js'
