@@ -9,8 +9,16 @@
   display block
   position relative
 
-  animation slide-book 0.5s ease-out
+  animation slide-book 0.5s ease-out forwards
   border 0
+  // Forces books to bottom in no animation supporting browsers
+  transform translateY(20%)
+
+.book-group__item:nth-child(2n) .book-group__cover
+  animation-delay 100ms
+
+.book-group__item:nth-child(3n) .book-group__cover
+  animation-delay 50ms
 
 .book-group__cover:after
   bottom 0

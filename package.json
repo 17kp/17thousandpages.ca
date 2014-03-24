@@ -10,7 +10,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "coffee-script": "~1.6.3",
+    "coffee-script": "^1.7.1",
     "grunt": "^0.4.4",
     "grunt-contrib-stylus": "^0.13.2",
     "grunt-contrib-watch": "^0.6.1",
