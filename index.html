@@ -1,7 +1,7 @@
 ---
 layout: default
 title_after: "—Stories brimming with wonder; Ottawa, Canada"
-meta: "Science fiction and space opera stories big on imagination &amp; adventure—and brimming with wonder."
+meta: "Science fiction and space opera stories big on imagination & adventure—and brimming with wonder."
 show_blurb: true
 priority: 1
 shortlink: /
@@ -26,18 +26,18 @@ shortlink: /
             {% endif %}
           </div>
           {% if book.disabled %}
-            <strong class="book-group__title book-group__title--disabled mega">{{book.title}}</strong>
+            <strong class="book-group__title book-group__title--disabled mega">{{book.title | escape}}</strong>
           {% else %}
-            <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title}}</a>
+            <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title | escape}}</a>
           {% endif %}
           <p class="book-group__author">
             <span class="book-group__author__by milli">By</span>
-            <span class="book-group__author__name milli">{{book.author}}</span>
+            <span class="book-group__author__name milli">{{book.author | escape}}</span>
           </p>
           {% if book.disabled %}
-            <span class="btn micro btn--disabled">{{book.btn}}</span>
+            <span class="btn micro btn--disabled">{{book.btn | escape}}</span>
           {% else %}
-            <a class="btn micro" href="{{site.baseurl}}/books/{{book.url}}">{{book.btn}}</a>
+            <a class="btn micro" href="{{site.baseurl}}/books/{{book.url}}">{{book.btn | escape}}</a>
           {% endif %}
         </div>
       </li>

@@ -6,7 +6,8 @@
   btn: More Details
   type: novel
   orientation: portrait
-- title: "High, Low, Over &amp; Under"
+
+- title: "High, Low, Over & Under"
   author: Thomas J Bradley
   cover: high-low-over-under/cover.jpg
   spine: high-low-over-under/spine.jpg
@@ -15,6 +16,7 @@
   disabled: true
   type: picture-book
   orientation: portrait
+
 - title: Bartholomew the Bragging Bullfrog
   author: Thomas J Bradley
   cover: bartholomew/cover.jpg
