@@ -21,8 +21,7 @@ module.exports = (grunt) ->
         quitAfter: true
       compress:
         src: [
-          'img'
-          's3'
+          # 'img'
         ]
 
     stylus:
@@ -145,7 +144,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'smush', [
     'svgmin'
-    'imageoptim'
+    # 'imageoptim'
   ]
 
   grunt.registerTask 'build', [

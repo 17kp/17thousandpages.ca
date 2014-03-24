@@ -5,6 +5,16 @@
   url: accidental-adventures-mariska-arisia
   btn: More Details
   type: novel
+  orientation: portrait
+- title: "High, Low, Over &amp; Under"
+  author: Thomas J Bradley
+  cover: high-low-over-under/cover.jpg
+  spine: high-low-over-under/spine.jpg
+  url: high-low-over-under
+  btn: Coming Soon
+  disabled: true
+  type: picture-book
+  orientation: portrait
 - title: Bartholomew the Bragging Bullfrog
   author: Thomas J Bradley
   cover: bartholomew/cover.jpg
@@ -13,3 +23,4 @@
   btn: Coming Soon
   disabled: true
   type: picture-book
+  orientation: landscape

@@ -12,7 +12,7 @@ shortlink: /
     {% for book in site.data.books %}
       <li class="unit gutter push unit-s-1 unit-m-1-2 unit-l-1-3">
         <div class="book-group__item">
-          <div class="book-group__cover-wrapper push book-type--{{book.type}}">
+          <div class="book-group__cover-wrapper push book-type--{{book.type}}--{{book.orientation}}">
             {% if book.disabled %}
               <div class="book-group__cover book-group__cover--disabled">
                 <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
