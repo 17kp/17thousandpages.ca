@@ -4,3 +4,12 @@
   spine: mariska-arisia/spine.jpg
   url: accidental-adventures-mariska-arisia
   btn: More Details
+  type: novel
+- title: Bartholomew the Bragging Bullfrog
+  author: Thomas J Bradley
+  cover: bartholomew/cover.jpg
+  spine: bartholomew/spine.jpg
+  url: bartholomew-bragging-bullfrog
+  btn: Coming Soon
+  disabled: true
+  type: picture-book

@@ -1,5 +1,7 @@
 .book-group__cover-wrapper
   overflow hidden
+  margin-left auto
+  margin-right auto
 
 .book-group__cover
 .book-group__cover:link
@@ -41,6 +43,14 @@
   .book-group__spine
     transform perspective(400) rotateY(-55deg)
 
+.book-group__cover--disabled:hover
+
+  .book-group__front
+    transform perspective(500) rotateY(15deg)
+
+  .book-group__spine
+    transform perspective(500) rotateY(-45deg)
+
 @keyframes slide-book
   0%
     transform translateY(20%)
@@ -51,10 +61,12 @@
 .book-group__title:link
 .book-group__title:visited
   display block
+  min-height 3rem
 
   border 0
 
   color #000
+  font-weight normal
 
 .book-group__title:hover
 .book-group__title:focus
@@ -62,6 +74,14 @@
   border 0
 
   color brand-primary
+
+.book-group__title--disabled:hover
+.book-group__title--disabled:focus
+.book-group__title--disabled:active
+  color #000
+
+.book-type--novel
+  width 70%
 
 .book__author__by
 .book-group__author__by

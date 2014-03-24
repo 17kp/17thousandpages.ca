@@ -7,23 +7,38 @@ priority: 1
 shortlink: /
 ---
 
-<div class="book-group pad-t pad-b">
-  <ol class="grid grid--bottom island">
+<div class="book-group pad-t">
+  <ol class="grid grid--bottom">
     {% for book in site.data.books %}
-      <li class="unit unit-s-1 unit-m-1-2 unit-l-1-4">
+      <li class="unit gutter push unit-s-1 unit-m-1-2 unit-l-1-3">
         <div class="book-group__item">
-          <div class="book-group__cover-wrapper push">
-            <a class="book-group__cover" href="{{site.baseurl}}/books/{{book.url}}" rel="external">
-              <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
-              <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
-            </a>
+          <div class="book-group__cover-wrapper push book-type--{{book.type}}">
+            {% if book.disabled %}
+              <div class="book-group__cover book-group__cover--disabled">
+                <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
+                <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
+              </div>
+            {% else %}
+              <a class="book-group__cover" href="{{site.baseurl}}/books/{{book.url}}">
+                <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
+                <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
+              </a>
+            {% endif %}
           </div>
-          <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title}}</a>
+          {% if book.disabled %}
+            <strong class="book-group__title book-group__title--disabled mega">{{book.title}}</strong>
+          {% else %}
+            <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title}}</a>
+          {% endif %}
           <p class="book-group__author">
             <span class="book-group__author__by milli">By</span>
             <span class="book-group__author__name milli">{{book.author}}</span>
           </p>
-          <a class="btn micro" href="{{site.baseurl}}/books/{{book.url}}">{{book.btn}}</a>
+          {% if book.disabled %}
+            <span class="btn micro btn--disabled">{{book.btn}}</span>
+          {% else %}
+            <a class="btn micro" href="{{site.baseurl}}/books/{{book.url}}">{{book.btn}}</a>
+          {% endif %}
         </div>
       </li>
     {% endfor %}
