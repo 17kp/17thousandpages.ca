@@ -92,6 +92,16 @@ module.exports = (grunt) ->
           dest: '_site/'
         }]
 
+    hashres:
+      options:
+         fileNameFormat: '${name}.${hash}.${ext}'
+      prod:
+        src: [
+          '_site/css/17kp.min.css'
+          '_site/js/17kp.min.js'
+        ]
+        dest: '_site/**/*.html'
+
     parallel:
       dev:
         options:
@@ -144,6 +154,7 @@ module.exports = (grunt) ->
     'uglify:prod'
     'shell:prod'
     'htmlmin:prod'
+    'hashres:prod'
   ]
 
   grunt.registerTask 'default', [

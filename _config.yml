@@ -11,5 +11,7 @@ exclude:
   - '*.styl'
   - '*.coffee'
   - '*.coffee.js'
+  - 'cdn'
+  - 'aws-s3.policy'
 
 cdn: //17kp.s3-us-west-2.amazonaws.com
