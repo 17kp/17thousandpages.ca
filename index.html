@@ -11,29 +11,29 @@ shortlink: /
   <ol class="grid grid--bottom">
     {% for book in site.data.books %}
       <li class="book-group__item unit gutter push unit-s-1 unit-m-1-2 unit-l-1-3">
-        <div>
-          <div class="book-group__cover-wrapper push book-type--{{book.type}}--{{book.orientation}}">
-            {% if book.disabled %}
-              <div class="book-group__cover book-group__cover--disabled">
-                <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
-                <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
-              </div>
-            {% else %}
-              <a class="book-group__cover" href="{{site.baseurl}}/books/{{book.url}}">
-                <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
-                <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
-              </a>
-            {% endif %}
-          </div>
+        <div class="book-group__cover-wrapper push book-type--{{book.type}}--{{book.orientation}}">
           {% if book.disabled %}
-            <strong class="book-group__title book-group__title--disabled mega">{{book.title | escape}}</strong>
+            <div class="book-group__cover book-group__cover--disabled">
+              <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
+              <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
+            </div>
           {% else %}
-            <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title | escape}}</a>
+            <a class="book-group__cover" href="{{site.baseurl}}/books/{{book.url}}">
+              <img class="book-group__front img-flex" src="{{site.cdn}}/{{book.cover}}" alt="">
+              <img class="book-group__spine" src="{{site.cdn}}/{{book.spine}}" alt="">
+            </a>
           {% endif %}
-          <p class="book-group__author">
-            <span class="book-group__author__by milli">By</span>
-            <span class="book-group__author__name milli">{{book.author | escape}}</span>
-          </p>
+        </div>
+        {% if book.disabled %}
+          <strong class="book-group__title book-group__title--disabled mega">{{book.title | escape}}</strong>
+        {% else %}
+          <a class="book-group__title mega" href="{{site.baseurl}}/books/{{book.url}}">{{book.title | escape}}</a>
+        {% endif %}
+        <p class="book-group__author">
+          <span class="book-group__author__by milli">By</span>
+          <span class="book-group__author__name milli">{{book.author | escape}}</span>
+        </p>
+        <div class="book-group__buttons">
           {% if book.disabled %}
             <span class="btn micro btn--disabled">{{book.btn | escape}}</span>
           {% else %}
