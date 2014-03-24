@@ -10,7 +10,7 @@ module.exports = (grunt) ->
       files:
         expand: true
         cwd: 'img'
-        src: ['*.svg']
+        src: ['**/*.svg']
         dest: 'img'
         ext: '.svg'
 
