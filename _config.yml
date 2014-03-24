@@ -11,3 +11,5 @@ exclude:
   - '*.styl'
   - '*.coffee'
   - '*.coffee.js'
+
+cdn: //17kp.s3-us-west-2.amazonaws.com

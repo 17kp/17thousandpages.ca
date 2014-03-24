@@ -22,6 +22,7 @@ module.exports = (grunt) ->
       compress:
         src: [
           'img'
+          's3'
         ]
 
     stylus:
@@ -132,7 +133,7 @@ module.exports = (grunt) ->
 
   require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask 'compress', [
+  grunt.registerTask 'smush', [
     'svgmin'
     'imageoptim'
   ]
