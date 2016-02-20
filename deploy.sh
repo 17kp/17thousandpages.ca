@@ -22,7 +22,7 @@ while getopts "$optspec" optchar ; do
   esac
 done
 
-rsync -e ssh -a -r --delete --delete-excluded --progress --compress --chmod=u=rwx,go=rx --exclude-from 'rsync-exclude.txt' ./_site/ thousand:/home/thousand/public_html
+rsync --archive --recursive --delete --delete-excluded --progress --compress --chmod=u=rwX,g=rX --exclude-from 'rsync-exclude.txt' ./_site/ keycdn:zones/17kp/
 
 if [ "$PING" -gt 0 ] ; then
   curl http://www.google.com/webmasters/tools/ping?sitemap=https://17thousandpages.ca/sitemap.xml
